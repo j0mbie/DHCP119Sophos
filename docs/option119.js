@@ -312,6 +312,7 @@ function viewmodel() {
             hex: ko.observable(),
             spacedHex: ko.observable(),
             cstring: ko.observable(),
+            Sophos: ko.observable(),
             error: ko.observable(),
             encode: function () {
                 try {
@@ -334,7 +335,7 @@ function viewmodel() {
                 }
             },
             clear: function() {
-                [this.mikrotik, this.cisco, this.hex, this.spacedHex, this.cstring, this.error].forEach(function (f) { f(""); });
+                [this.mikrotik, this.cisco, this.hex, this.spacedHex, this.cstring, this.Sophos, this.error].forEach(function (f) { f(""); });
             },
             reset: function() {
                 this.clear();
