@@ -113,11 +113,10 @@ function cvtHex(e) {
 // Converts one element from encode() to a decimal (0-255) string representing
 // that byte.
 function cvtDecimal(e) {
-    return String(e);
     if (typeof e == 'number') {
         return String(e);
     } else if (typeof e == 'string') {
-        return Number("0x" + e);
+        return e
     } else {
         return "Unexpected value";
     }
