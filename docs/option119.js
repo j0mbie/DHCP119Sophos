@@ -110,9 +110,27 @@ function cvtHex(e) {
     }
 }
 
+// Converts one element from encode() to a decimal (0-255) string representing
+// that byte.
+function cvtDecimal(e) {
+    if (typeof e == 'number') {
+        return String(e);
+    } else if (typeof e == 'string') {
+        return Number("0x" + e);
+    } else {
+        return "Unexpected value";
+    }
+}
+
 // Converts a result from encode() to a hex string with optional separator.
 function toHex(encoded, sep) {
     return encoded.map(cvtHex).join(sep || "");
+}
+
+// Converts a result from encode() to a decimal (0-255) string with optional separator.
+function toDecimal(encoded, sep) {
+    let TempArray = encoded.map(cvtDecimal);
+    return TempArray.join(sep);
 }
 
 // Converts a result from encode() to a string for Cisco IOS
@@ -309,6 +327,7 @@ function viewmodel() {
                     this.hex(toHex(result));
                     this.spacedHex(toHex(result, " "));
                     this.cstring(toCstring(result));
+                    this.Sophos(toDecimal(result));
                 } catch (e) {
                     this.clear();
                     this.error(e);
