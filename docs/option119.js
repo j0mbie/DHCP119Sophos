@@ -113,13 +113,7 @@ function cvtHex(e) {
 // Converts one element from encode() to a decimal (0-255) string representing
 // that byte.
 function cvtDecimal(e) {
-    if (typeof e == 'number') {
-        return String(e);
-    } else if (typeof e == 'string') {
-        return e
-    } else {
-        return "Unexpected value";
-    }
+	return Number("0x" + e);
 }
 
 // Converts a result from encode() to a hex string with optional separator.
@@ -129,8 +123,9 @@ function toHex(encoded, sep) {
 
 // Converts a result from encode() to a decimal (0-255) string with optional separator.
 function toDecimal(encoded, sep) {
-    let TempArray = encoded.map(cvtDecimal);
-    return TempArray.join(sep);
+	let HexArray = encoded.map(cvtHex);
+    let DecArray = HexArray.map(cvtDecimal);
+    return DecArray.join(sep);
 }
 
 // Converts a result from encode() to a string for Cisco IOS
