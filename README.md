@@ -1,6 +1,6 @@
 # DHCP Domain Search List (Option 119) Encoder
 
-[Use the tool here](https://jjjordan.github.io/dhcp119/)
+[Use the tool here](https://j0mbie.org/DHCP119)
 
 Here's an encoder for DHCP Option 119, which sends domain search lists to
 clients.  Many DHCP server implementations do not encode this option for
