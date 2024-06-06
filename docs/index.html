@@ -56,6 +56,7 @@
               <button class="tablinks" onclick="tab(event, 'Juniper')">Juniper SRX</button>
               <button class="tablinks" onclick="tab(event, 'ZyXEL')">ZyXEL Keenetic</button>
               <button class="tablinks" onclick="tab(event, 'systemd')">systemd-network</button>
+              <button class="tablinks" onclick="tab(event, 'Sophos')">Sophos</button>
               <button class="tablinks" onclick="tab(event, 'Hex')">Raw hex</button>
             </div>
 
@@ -138,6 +139,13 @@
               <hr>
               <p>Raw option value:</p>
               <p><input type="text" data-bind="textInput: cstring()" style="width: 100%; padding: 0.5em;" /></p>
+            </div>
+
+            <div id="Sophos" class="tabcontent">
+              <p>Add this as custom option 119 of type one-byte array:</p>
+              <code class="codeblock">
+                <span><span data-bind="text: Sophos"></span></span><br>
+              </code>
             </div>
 
             <div id="Hex" class="tabcontent">
